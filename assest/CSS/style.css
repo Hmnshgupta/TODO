@@ -15,6 +15,7 @@ body{
     height: 700px;
     border: 1px solid;
     border-color: rgb(2, 8, 14);
+    position: absolute;
 }
 
 #pageHeader h1{
@@ -90,12 +91,24 @@ li{
     background-color: whitesmoke;
 }
 
-#buttons{
-    display: flex;
-    justify-content: space-evenly;
-   
+#addbttn{
+    position: relative;
+    background-color: aqua;
+    text-align: center;
     width: 200px;
     height: 50px; 
+    justify-content: center;
+    left: 190px;
+}
+#deletebttn{
+    position: relative;
+    background-color: aqua;
+    text-align: center;
+    width: 200px;
+    height: 50px; 
+    left: 410px;
+    top : -500px
+  
 }
 #category-value{
     float : right;
@@ -106,4 +119,12 @@ li{
     justify-content: center;
     align-items: center;
     margin-right: 20px;
+}
+
+#result{
+    flex-wrap: wrap;
+}
+
+.fa-duotone fa-trash{
+    font-size: larger;
 }

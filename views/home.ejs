@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <%= title %> </title>
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://kit.fontawesome.com/f38686ba35.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="main-container">
@@ -40,43 +41,38 @@
                         </div>
                         <hr size="2" width="100%" color="grey">
                     </div>
-                    <div id="buttons">
-                        <button>ADD TASK</button>
                         
-                        
-                    </div>
+                        <button id="addbttn" >ADD TASK</button>
             </form>
             <form action="/delete-task" method="get">
+                <div id="result">
+                    <ul>
+                        
+                        <% for(let i of items) { %>
+                        
+                                
+                                    <li>
+                                            <hr>
+                                            <input type="checkbox" name="<%=i._id %>" class="customechecked">
+                                            <span>
+                                            <%= i.describe %><br>
+                                            </span>
+                                            <span id="category-value">
+                                                <%= i.category %>
+                                            </span>
+                                            <%= i.date %>
+                                            </input>
+                                    
+                                    </li>
+                                
+                        <% } %>
+                        
+                    
+                    </ul>
+                </div>
+                <i class="fa-duotone fa-trash"></i>
                 <button id="deletebttn">DELETE TASK</button> </a>
-            
-
-            <div id="result">
-                <ul>
-                    
-                    <% for(let i of items) { %>
-                       
-                            
-                                <li>
-                                        <hr>
-                                        <input type="checkbox" name="<%=i._id %>" class="customechecked">
-                                        <span>
-                                        <%= i.describe %><br>
-                                        </span>
-                                        <span id="category-value">
-                                            <%= i.category %>
-                                        </span>
-                                        <%= i.date %>
-                                        </input>
-                                   
-                                </li>
-                            
-                    <% } %>
-                    
-                  
-                 </ul>
-            </div>
-
-        </form>
+            </form>
           
     </div>
     <script>
