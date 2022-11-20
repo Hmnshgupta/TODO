@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= title %> </title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div id="main-container">
+        <div id="pageHeader">
+            <h1> TODO APP </h1>
+        </div>
+            <form action="/add-item" method="post">
+                    <div id="content">
+                        <hr size="1" width="100%" color="grey">
+                        <div id="desc">
+                            <h3> &nbsp; DESCRIPTION</h3>
+                            <input type="text" name="describe" placeholder="What you need to do?" required>
+                        </div>
+                        <hr size="2" width="100%" color="grey">
+                        <div id="catDate">
+                            <div id="category">
+                                <h3><label for="Category">&nbsp;Category</label></h3><br>
+                                <select name="category" id="cat">
+                                    <option value="Choose a Category" disabled >Choose a Category</option>
+                                    <option value="Personal">Personal</option>
+                                    <option value="Work">Public</option>
+                                    <option value="School">School</option>
+                                    <option value="Cleaning">Cleaning</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                            <div id = "verticalLine"></div>
+                            <div id="date">
+                                <h3 id="date">&nbsp;DUE DATE</h3>
+                                <input type="date"  name="date">
+                            </div>
+                        </div>
+                        <hr size="2" width="100%" color="grey">
+                    </div>
+                    <div id="buttons">
+                        <button>ADD TASK</button>
+                        
+                        
+                    </div>
+            </form>
+            <form action="/delete-task" method="get">
+                <button id="deletebttn">DELETE TASK</button> </a>
+            
+
+            <div id="result">
+                <ul>
+                    
+                    <% for(let i of items) { %>
+                       
+                            
+                                <li>
+                                        <hr>
+                                        <input type="checkbox" name="<%=i._id %>" class="customechecked">
+                                        <span>
+                                        <%= i.describe %><br>
+                                        </span>
+                                        <span id="category-value">
+                                            <%= i.category %>
+                                        </span>
+                                        <%= i.date %>
+                                        </input>
+                                   
+                                </li>
+                            
+                    <% } %>
+                    
+                  
+                 </ul>
+            </div>
+
+        </form>
+          
+    </div>
+    <script>
+    
+    </script>
+</body>
+</html>
